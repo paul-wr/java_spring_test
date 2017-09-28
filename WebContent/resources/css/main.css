@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+form {
+	width: 300px;
+	background: #eee;
+	border: 1px solid #00aced;
+}
+
+.formtable {
+	padding: 10px;
+	border: 1px solid #555;
+	width: 100%;
+}
+
+input[type="text"], textarea {
+	width: 100%;
+}
+
+input[type="submit"] {
+	background: #00aced;
+	color: #fff;
+	padding: 7px;
+}
+
