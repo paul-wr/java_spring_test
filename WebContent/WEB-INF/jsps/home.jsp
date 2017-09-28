@@ -13,6 +13,10 @@
 	
 	<p><a href="${pageContext.request.contextPath}/offers">Show current offer</a></p>
  	<p><a href="${pageContext.request.contextPath}/createoffer">Add a new offer</a></p>
+ 	
+ 	
+ 	<!-- the value of id is set in the url paramter ?id=734-->
+ 	<p>ID: ${id}</p>
 	
 	
 	  
