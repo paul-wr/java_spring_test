@@ -7,11 +7,13 @@ import javax.validation.Valid;
 
 import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -52,9 +54,21 @@ public class OffersController {
 		model.addAttribute("id", id);
 		return "home";
 	}
+	
+	
+	
+	/*
+	@ExceptionHandler(DataAccessException.class)
+	public String handleDatabaseException(DataAccessException ex){
+		return "error";
+	}
+	*/
+	
 
 	@RequestMapping("/offers")
 	public String showOffers(Model model){
+		
+		offersService.throwTestException();
 		
 		List<Offer> offers = offersService.getCurrent();
 		
@@ -76,8 +90,6 @@ public class OffersController {
 		
 		if(result.hasErrors()){
 			
-			
-			
 			/*System.out.println("Form does not validate.");
 			List<ObjectError> errors = result.getAllErrors();
 			
@@ -87,10 +99,10 @@ public class OffersController {
 		
 			return "createoffer";
 		}
-		else{
-			System.out.println("Form validated.");
 		
-		}
+		offersService.create(offer);
+		
+		
 		
 		/*model.addAttribute("name", offer.getName());
 		model.addAttribute("email", offer.getEmail());
