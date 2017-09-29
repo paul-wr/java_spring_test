@@ -15,11 +15,11 @@
 		action="${pageContext.request.contextPath}/docreate" commandName="offer">
 		<table class="formtable">
 			<tr>
-				<td>Name: <sf:input type="text"  path="name" name="name" />
+				<td>Name: <sf:input type="text"  path="name" name="name" /><br/><sf:errors path="name" cssClass="error"></sf:errors>
 				</td>
 			</tr>
 			<tr>
-				<td>Email: <sf:input type="text" path="email" name="email" />
+				<td>Email: <sf:input type="text" path="email" name="email" /><br/><sf:errors path="email" cssClass="error"></sf:errors>
 				</td>
 			</tr>
 			<tr>
@@ -35,7 +35,7 @@
 				<td>Your offer:</td>
 			</tr>
 			<tr>
-				<td><sf:textarea name="text" path="text" rows="10" cols="10"></sf:textarea></td>
+				<td><sf:textarea name="text" path="text" rows="10" cols="10"></sf:textarea><br/><sf:errors path="text" cssClass="error"></sf:errors></td>
 			</tr>
 			<tr>
 				<td><input value="Create advert" type="submit" /></td>
