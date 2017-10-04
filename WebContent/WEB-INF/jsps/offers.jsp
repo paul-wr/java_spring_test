@@ -15,7 +15,7 @@
 <div class="container">
 	<h2>Results</h2>
 	<c:forEach var="offer" items="${offers}">
-		<div class="col-lg-4 col-md-6">
+		<div class="col-lg-3 col-md-6">
 	        <ul class="list-group">
 			 	<li class="list-group-item active"><h2>Offer</h2></li>
 				<li class="list-group-item">ID: <c:out value="${offer.id}"></c:out></li>
