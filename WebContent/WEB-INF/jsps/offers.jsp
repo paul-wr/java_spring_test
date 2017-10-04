@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-	<h2>Results</h2>
+	<h2>Offers</h2>
 	<c:forEach var="offer" items="${offers}">
 		<div class="col-lg-3 col-md-6">
 	        <ul class="list-group">
